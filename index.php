@@ -15,23 +15,32 @@
 
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 		<div class="container">
-			<a class="navbar-brand" href="#">Restaurante</a>
+			<a class="navbar-brand" href="#">Restaurante x100pre</a>
 
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
 
 			<div class="collapse navbar-collapse" id="navbarNav">
-
-				<ul class="nav navbar-nav">
+				<ul class="nav navbar-nav ml-auto">
 					<li class="nav-item">
-						<a class="nav-link active" href="#" aria-current="page">Nav 1<span class="visually-hidden">(current)</span></a>
+						<a class="nav-link" href="#inicio">Inicio</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">Nav 2</a>
+						<a class="nav-link" href="#menu">Menú del día</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#chefs">Chefs</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#testimonios">Testimoniales</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#contacto">Contacto</a>
 					</li>
 				</ul>
 			</div>
+
 		</div>
 	</nav>
 
@@ -39,10 +48,15 @@
 	<header>
 		<!-- place navbar here -->
 	</header>
-	<main></main>
-	<footer>
-		<!-- place footer here -->
+
+	<main>
+
+	</main>
+
+	<footer class="bg-dark text-light text-center">
+		<p>Todos los derechos reservados <?php echo date('Y'); ?> &copy;</p>
 	</footer>
+
 	<!-- Bootstrap JavaScript Libraries -->
 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 
