@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<title>Title</title>
+	<title>Restaurante</title>
 	<!-- Required meta tags -->
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -157,12 +157,50 @@
 		</div>
 	</section>
 
-	<header>
-		<!-- place navbar here -->
-	</header>
+	<main class="container mt-4">
+		<h2 class="text-center">Menú (Nuestras Recomendaciones)</h2>
+		<br>
+		<div class="row row-cols-1 row-cols-md-4 g-4">
+			<div class="col d-flex">
+				<div class="card bg-transparent border-success h-100">
+					<img src="images/menu/img1.jpg" alt="imagen de comida" class="card-img-top">
+					<div class="card-body">
+						<h5 class="card-title">Titulo de la receta</h5>
+						<p class="card-text">Descripción breve de la receta.</p>
+					</div>
+				</div>
+			</div>
 
-	<main>
+			<div class="col d-flex">
+				<div class="card bg-transparent border-success h-100">
+					<img src="images/menu/img2.jpg" alt="imagen de comida" class="card-img-top">
+					<div class="card-body">
+						<h5 class="card-title">Titulo de la receta</h5>
+						<p class="card-text">Descripción breve de la receta.</p>
+					</div>
+				</div>
+			</div>
 
+			<div class="col d-flex">
+				<div class="card bg-transparent border-success h-100">
+					<img src="images/menu/img3.jpg" alt="imagen de comida" class="card-img-top">
+					<div class="card-body">
+						<h5 class="card-title">Titulo de la receta</h5>
+						<p class="card-text">Descripción breve de la receta.</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col d-flex">
+				<div class="card bg-transparent border-success h-100">
+					<img src="images/menu/img4.jpg" alt="imagen de comida" class="card-img-top">
+					<div class="card-body">
+						<h5 class="card-title">Titulo de la receta</h5>
+						<p class="card-text">Descripción breve de la receta.</p>
+					</div>
+				</div>
+			</div>
+		</div>
 	</main>
 
 	<footer class="bg-dark text-light text-center">
