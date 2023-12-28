@@ -21,6 +21,7 @@
 
 <body>
 
+	<!-- Navegación -->
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 		<div class="container">
 			<a class="navbar-brand" href="#"><i class="fas fa-utensils"> </i> Restaurante x100pre</a>
@@ -52,6 +53,7 @@
 		</div>
 	</nav>
 
+	<!-- img de Fondo -->
 	<section id="banner" class="container-fluid p-0">
 		<div class="banner-img" style="position: relative; background:url(images/img1.jpeg) center/cover no-repeat; height:400px">
 			<div class="banner-text" style="position:absolute; top:50%; left:50%; transform:translate(-50%, 60%); text-align: center; color:#fff">
@@ -62,6 +64,7 @@
 		</div>
 	</section>
 
+	<!-- Sección "Nuestro Menu"-->
 	<section id="id" class="container mt-4 text-center">
 		<div class="jumbotron bg-dark text-white">
 			<br>
@@ -71,6 +74,7 @@
 		</div>
 	</section>
 
+	<!-- Sección "Chefs"-->
 	<section id="chefs" class="container mt-4 text-center">
 		<h2>Nuestros Expertos en la Cocina</h2>
 		<div class="row">
@@ -120,6 +124,36 @@
 				</div>
 			</div>
 
+		</div>
+	</section>
+
+	<!-- Testimonios -->
+	<section id="testimonios" class="bg-light py-5">
+		<div class="container">
+			<h2 class="mb-4 text-center">Testimonios</h2>
+			<div class="row">
+				<div class="col-md-6 d-flex">
+					<div class="card md-4 w-100">
+						<div class="card-body">
+							<p class="card-text">Muy buena Comida</p>
+						</div>
+						<div class="card-footer text-muted">
+							Juan Carlos
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-6 d-flex">
+					<div class="card md-4 w-100">
+						<div class="card-body">
+							<p class="card-text">Muy buena Comida</p>
+						</div>
+						<div class="card-footer text-muted">
+							Juan Carlos
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</section>
 
