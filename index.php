@@ -10,11 +10,11 @@
 	<!-- Bootstrap CSS v5.2.1 -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
 
-	<style>
+	<!-- <style>
 		body {
 			overflow: hidden;
 		}
-	</style>
+	</style> -->
 </head>
 
 <body>
@@ -51,12 +51,21 @@
 	</nav>
 
 	<section id="banner" class="container-fluid p-0">
-		<div class="banner-img" style="position: relative; background:url(images/img1.jpeg) center/cover no-repeat; height:90vh">
+		<div class="banner-img" style="position: relative; background:url(images/img1.jpeg) center/cover no-repeat; height:400px">
 			<div class="banner-text" style="position:absolute; top:50%; left:50%; transform:translate(-50%, 60%); text-align: center; color:#fff">
 				<h1>Bienvenido a Restaurante x100pre</h1>
 				<p>El mejor Restaurente de la Ciudad</p>
 				<a href="#menu" class="btn btn-primary">Ver Menú</a>
 			</div>
+		</div>
+	</section>
+
+	<section id="id" class="container mt-4 text-center">
+		<div class="jumbotron bg-dark text-white">
+			<br>
+				<h2>¡Bienvenid@ a tu Menú Virtual!</h2>
+				<p>Descubre una experiencia culinaria única</p>
+			<br>
 		</div>
 	</section>
 
