@@ -10,6 +10,8 @@
 	<!-- Bootstrap CSS v5.2.1 -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
 
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 	<!-- <style>
 		body {
 			overflow: hidden;
@@ -21,7 +23,7 @@
 
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 		<div class="container">
-			<a class="navbar-brand" href="#">Restaurante x100pre</a>
+			<a class="navbar-brand" href="#"><i class="fas fa-utensils"> </i> Restaurante x100pre</a>
 
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
@@ -63,9 +65,61 @@
 	<section id="id" class="container mt-4 text-center">
 		<div class="jumbotron bg-dark text-white">
 			<br>
-				<h2>¡Bienvenid@ a tu Menú Virtual!</h2>
-				<p>Descubre una experiencia culinaria única</p>
+			<h2>¡Bienvenid@ a tu Menú Virtual!</h2>
+			<p>Descubre una experiencia culinaria única</p>
 			<br>
+		</div>
+	</section>
+
+	<section id="chefs" class="container mt-4 text-center">
+		<h2>Nuestros Expertos en la Cocina</h2>
+		<div class="row">
+
+			<div class="col-md-4">
+				<div class="card">
+					<img src="images/colabs/img1.jpg" alt="Imagen Chef" class="card-img-top">
+					<div class="card-body">
+						<h5 class="card-title">Juan Carlos "Tacos Locos" Torres</h5>
+						<p class="card-text">Creador de los Tacos Locos</p>
+						<div class="social-icons mt-3">
+							<a href="#" class="text-dark me-3"><i class="fab fa-facebook"></i></a>
+							<a href="#" class="text-dark me-3"><i class="fab fa-twitter"></i></a>
+							<a href="#" class="text-dark me-3"><i class="fab fa-instagram"></i></a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-4">
+				<div class="card">
+					<img src="images/colabs/img2.jpg" alt="Imagen Chef" class="card-img-top">
+					<div class="card-body">
+						<h5 class="card-title">María del Carmen "La Maquillera" Pérez</h5>
+						<p class="card-text">Maquiragista y cocinera por vocación.</p>
+						<div class="social-icons mt-3">
+							<a href="#" class="text-dark me-3"><i class="fab fa-facebook"></i></a>
+							<a href="#" class="text-dark me-3"><i class="fab fa-twitter"></i></a>
+							<a href="#" class="text-dark me-3"><i class="fab fa-instagram"></i></a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-4">
+				<div class="card">
+					<img src="images/colabs/img3.jpg" alt="Imagen Chef" class="card-img-top">
+					<div class="card-body">
+						<h5 class="card-title">Carlos "El Gourmet" Sánchez</h5>
+						<p class="card-text">Gastrónomo, experto en vinos y licores.</p>
+						<div class="social-icons mt-3">
+							<a href="#" class="text-dark me-3"><i class="fab fa-facebook"></i></a>
+							<a href="#" class="text-dark me-3"><i class="fab fa-twitter"></i></a>
+							<a href="#" class="text-dark me-3"><i class="fab fa-instagram"></i></a>
+						</div>
+					</div>
+				</div>
+			</div>
+
 		</div>
 	</section>
 
