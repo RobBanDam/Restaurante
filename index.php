@@ -157,6 +157,7 @@
 		</div>
 	</section>
 
+	<!-- Menú -->
 	<main class="container mt-4">
 		<h2 class="text-center">Menú (Nuestras Recomendaciones)</h2>
 		<br>
@@ -202,6 +203,25 @@
 			</div>
 		</div>
 	</main>
+
+	<!-- Contacto -->
+	<section class="container mt-4">
+		<h2 class="text-center">Contáctanos</h2>
+		<h5>Estamos aquí para servirte</h5>
+
+		<form action="?" method="post">
+			<div class="mb-3">
+				<label for="nombre">Nombre: </label><br>
+				<input type="text" class="form-control" id="nombre" name="nombre" placeholder="Escribe aquí tu Nombre" required><br>
+				<label for="email">Correo Electrónico: </label><br>
+				<input type="email" class="form-control" id="email" name="email" placeholder="Ejemplo@ejemplo.com" required><br>
+				<label for="mensaje">Mensaje: </label><br>
+				<textarea id="mensaje" class="form-control" name="mensaje" rows="6" cols="50"></textarea><br>
+			</div>
+			<input type="submit" class="btn btn-primary" value="Enviar Mensaje">
+		</form>
+	</section>
+	<br>
 
 	<footer class="bg-dark text-light text-center">
 		<p>Todos los derechos reservados <?php echo date('Y'); ?> &copy;</p>
