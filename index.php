@@ -24,7 +24,7 @@
 	<!-- Navegación -->
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 		<div class="container">
-			<a class="navbar-brand" href="#"><i class="fas fa-utensils"> </i> Restaurante x100pre</a>
+			<a class="navbar-brand" href="#inicio"><i class="fas fa-utensils"> </i> Restaurante x100pre</a>
 
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
@@ -32,9 +32,6 @@
 
 			<div class="collapse navbar-collapse" id="navbarNav">
 				<ul class="nav navbar-nav ml-auto">
-					<li class="nav-item">
-						<a class="nav-link" href="#inicio">Inicio</a>
-					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="#menu">Menú del día</a>
 					</li>
@@ -47,6 +44,9 @@
 					<li class="nav-item">
 						<a class="nav-link" href="#contacto">Contacto</a>
 					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#horario">Horarios</a>
+					</li>
 				</ul>
 			</div>
 
@@ -54,7 +54,7 @@
 	</nav>
 
 	<!-- img de Fondo -->
-	<section id="banner" class="container-fluid p-0">
+	<section id="inicio" class="container-fluid p-0">
 		<div class="banner-img" style="position: relative; background:url(images/img1.jpeg) center/cover no-repeat; height:400px">
 			<div class="banner-text" style="position:absolute; top:50%; left:50%; transform:translate(-50%, 60%); text-align: center; color:#fff">
 				<h1>Bienvenido a Restaurante x100pre</h1>
@@ -64,7 +64,7 @@
 		</div>
 	</section>
 
-	<!-- Sección "Nuestro Menu"-->
+	<!-- Sección "Bienvenid@ a tu Menú Virtual"-->
 	<section id="id" class="container mt-4 text-center">
 		<div class="jumbotron bg-dark text-white">
 			<br>
@@ -158,7 +158,7 @@
 	</section>
 
 	<!-- Menú -->
-	<main class="container mt-4">
+	<main id="menu" class="container mt-4">
 		<h2 class="text-center">Menú (Nuestras Recomendaciones)</h2>
 		<br>
 		<div class="row row-cols-1 row-cols-md-4 g-4">
@@ -205,7 +205,7 @@
 	</main>
 
 	<!-- Contacto -->
-	<section class="container mt-4">
+	<section id="contacto" class="container mt-4">
 		<h2 class="text-center">Contáctanos</h2>
 		<h5>Estamos aquí para servirte</h5>
 
@@ -220,10 +220,30 @@
 			</div>
 			<input type="submit" class="btn btn-primary" value="Enviar Mensaje">
 		</form>
+		<br>
 	</section>
-	<br>
+	
+	<!-- Seccion de horarios -->
+	<div id="horario" class="text-center bg-light p-4">
+		<h3 class="mb4">Horario de Atención</h3>
 
-	<footer class="bg-dark text-light text-center">
+		<div>
+			<p><strong>Lunes a Viernes</strong></p>
+			<p>8:00 a.m. - 10:00 p.m.</p>
+		</div>
+
+		<div>
+			<p><strong>Sábado</strong></p>
+			<p>10:00 a.m. - 10:00 p.m.</p>
+		</div>
+
+		<div>
+			<p><strong>Domingo</strong></p>
+			<p>9:00 a.m. - 7:00 p.m.</p>
+		</div>
+	</div>
+
+	<footer class="bg-dark text-light text-center py-2">
 		<p>Todos los derechos reservados <?php echo date('Y'); ?> &copy;</p>
 	</footer>
 
