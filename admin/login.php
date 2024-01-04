@@ -23,7 +23,7 @@
                     <div class="card text-center">
                         <div class="card-header">Login</div>
                         <div class="card-body">
-                            <form action="" method="post">
+                            <form action="index.php" method="post">
                                 <div class="mb-3">
                                     <label for="usuario" class="form-label">Usuario</label>
                                     <input type="text" class="form-control" name="usuario" id="usuario" placeholder="Ingresa tu Usuario">
