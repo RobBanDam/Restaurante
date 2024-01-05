@@ -1,5 +1,9 @@
+<?php 
+	$urlBase = "http://localhost:3000/admin/";
+?>
+
 <!doctype html>
-<html lang="en">
+<html lang="es">
 
 <head>
 	<title>Administrador Web</title>
@@ -17,12 +21,12 @@
 		<nav class="navbar navbar-expand navbar-light bg-light">
 			<div class="nav navbar-nav">
 				<a class="nav-item nav-link active" href="#" aria-current="page">Administrador <span class="visually-hidden">(current)</span></a>
-				<a class="nav-item nav-link" href="#">Banners</a>
-				<a class="nav-item nav-link" href="#">Colabs</a>
-				<a class="nav-item nav-link" href="#">Testimonios</a>
-				<a class="nav-item nav-link" href="#">Menú</a>
-				<a class="nav-item nav-link" href="#">Comentarios</a>
-				<a class="nav-item nav-link" href="#">Usuarios</a>
+				<a class="nav-item nav-link" href="<?php echo $urlBase;?>seccion/banners/">Banners</a>
+				<a class="nav-item nav-link" href="<?php echo $urlBase;?>seccion/colaboradores/">Colabs</a>
+				<a class="nav-item nav-link" href="<?php echo $urlBase;?>seccion/testimonios/">Testimonios</a>
+				<a class="nav-item nav-link" href="<?php echo $urlBase;?>seccion/menu/">Menú</a>
+				<a class="nav-item nav-link" href="<?php echo $urlBase;?>seccion/comentarios/">Comentarios</a>
+				<a class="nav-item nav-link" href="<?php echo $urlBase;?>seccion/usuarios/">Usuarios</a>
 				<a class="nav-item nav-link" href="#">Cerrar Sesión</a>
 			</div>
 		</nav>
