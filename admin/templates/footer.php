@@ -1,3 +1,4 @@
+</section>
 </main>
 <footer>
 	<!-- place footer here -->
