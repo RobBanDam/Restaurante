@@ -27,7 +27,7 @@
                         <td>R1C3</td>
                         <td>R1C3</td>
                         <td>
-                            <a name="" id="" class="btn btn-info" href="#" role="button">Editar</a>
+                            <a name="" id="" class="btn btn-info" href="editar.php" role="button">Editar</a>
                             <a name="" id="" class="btn btn-danger" href="#" role="button">Eliminar</a>
                         </td>
                     </tr>
