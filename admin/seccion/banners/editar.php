@@ -14,6 +14,30 @@ if(isset($_GET['txtID'])){
     $link = $registro["link"];
 }
 
+if($_POST){
+    $txtID = (isset($_POST["txtID"])) ? $_POST["txtID"]:"";
+    $titulo = (isset($_POST["titulo"])) ? $_POST["titulo"]:"";
+    $descripcion = (isset($_POST["descripcion"])) ? $_POST["descripcion"]:"";
+    $link = (isset($_POST["link"])) ? $_POST["link"]:"";
+
+    $sentencia = $conexion->prepare("UPDATE `tbl_banners` 
+                                        SET titulo=:titulo, descripcion=:descripcion, link=:link
+                                        WHERE id=:id");
+
+    $sentencia->bindParam(":id", $txtID);
+    $sentencia->bindParam(":titulo", $titulo);
+    $sentencia->bindParam(":descripcion", $descripcion);
+    $sentencia->bindParam(":link", $link);
+
+    $sentencia->execute();
+
+    header("Location: index.php");
+
+    /* echo "<pre>";
+    var_dump($_POST);
+    echo "</pre>"; */
+}
+
 include '../../templates/header.php'; 
 ?>
 
