@@ -1,10 +1,19 @@
-<?php include "../../templates/header.php"; ?>
+<?php 
+include "../../bd.php";
+
+$sentencia = $conexion->prepare("SELECT * from `tbl_banners`");
+$sentencia -> execute();
+$listaBanners = $sentencia -> fetchAll(PDO::FETCH_ASSOC);
+
+include "../../templates/header.php"; 
+?>
+
 <br>
 
 <div class="card">
     <div class="card-header">
 
-        <a name="" id="" class="btn btn-primary" href="crear.php" role="button">Agregar Registros </a>
+        <a name="" id="" class="btn btn-primary" href="crear.php" role="button">Agregar Registros</a>
 
     </div>
     <div class="card-body">
@@ -21,26 +30,20 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="">
-                        <td scope="row">R1C1</td>
-                        <td>R1C2</td>
-                        <td>R1C3</td>
-                        <td>R1C3</td>
-                        <td>
-                            <a name="" id="" class="btn btn-info" href="editar.php" role="button">Editar</a>
-                            <a name="" id="" class="btn btn-danger" href="#" role="button">Eliminar</a>
-                        </td>
-                    </tr>
-                    <tr class="">
-                        <td scope="row">Item</td>
-                        <td>Item</td>
-                        <td>Item</td>
-                        <td>Item</td>
-                        <td>
-                            <a name="" id="" class="btn btn-info" href="#" role="button">Editar</a>
-                            <a name="" id="" class="btn btn-danger" href="#" role="button">Eliminar</a>
-                        </td>
-                    </tr>
+                    
+                        <?php foreach ($listaBanners as $key => $value) { ?>
+                            <tr class="">
+                                <td scope="row"><?php echo $value['id'];?></td>
+                                <td><?php echo $value['titulo'];?></td>
+                                <td><?php echo $value['descripcion'];?></td>
+                                <td><?php echo $value['link'];?></td>
+                                <td>
+                                    <a name="" id="" class="btn btn-info" href="editar.php" role="button">Editar</a>
+                                    <a name="" id="" class="btn btn-danger" href="#" role="button">Eliminar</a>
+                                </td>
+                            </tr>
+                        <?php } ?>
+                    
                 </tbody>
             </table>
         </div>
