@@ -1,6 +1,16 @@
 <?php 
 include "../../bd.php";
 
+if(isset($_GET['txtID'])){
+    $txtID = (isset($_GET["txtID"])) ? $_GET["txtID"]:"";
+    $sentencia = $conexion->prepare("DELETE FROM tbl_banners WHERE id=:id");
+    $sentencia->bindParam(":id", $txtID);
+    
+    $sentencia->execute();
+
+    header("Location: index.php");
+}
+
 $sentencia = $conexion->prepare("SELECT * from `tbl_banners`");
 $sentencia -> execute();
 $listaBanners = $sentencia -> fetchAll(PDO::FETCH_ASSOC);
@@ -39,7 +49,7 @@ include "../../templates/header.php";
                                 <td><?php echo $value['link'];?></td>
                                 <td>
                                     <a name="" id="" class="btn btn-info" href="editar.php" role="button">Editar</a>
-                                    <a name="" id="" class="btn btn-danger" href="#" role="button">Eliminar</a>
+                                    <a name="" id="" class="btn btn-danger" href="index.php?txtID=<?php echo $value['id'];?>" role="button">Eliminar</a>
                                 </td>
                             </tr>
                         <?php } ?>
