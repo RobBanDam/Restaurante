@@ -1,5 +1,19 @@
+<?php
+	include "admin/bd.php";
+
+	$sentencia = $conexion->prepare("SELECT * FROM tbl_banners ORDER BY id DESC limit 1");
+	$sentencia -> execute();
+	$listaBanners = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+
+	/* echo "<pre>";
+	var_dump($listaBanners);
+	echo "</pre>"; */
+
+?>
+
+
 <!doctype html>
-<html lang="en">
+<html lang="es">
 
 <head>
 	<title>Restaurante</title>
@@ -57,9 +71,13 @@
 	<section id="inicio" class="container-fluid p-0">
 		<div class="banner-img" style="position: relative; background:url(images/img1.jpeg) center/cover no-repeat; height:400px">
 			<div class="banner-text" style="position:absolute; top:50%; left:50%; transform:translate(-50%, 60%); text-align: center; color:#fff">
-				<h1>Bienvenido a Restaurante x100pre</h1>
-				<p>El mejor Restaurente de la Ciudad</p>
-				<a href="#menu" class="btn btn-primary">Ver Menú</a>
+
+			<?php foreach($listaBanners as $banner) {?>
+				<h1>Bienvenido a <?php echo $banner['titulo'];?></h1>
+				<p><?php echo $banner['descripcion'];?></p>
+				<a href="<?php echo $banner['link'];?>" class="btn btn-primary">Ver Menú</a>
+			<?php } ?>
+
 			</div>
 		</div>
 	</section>
