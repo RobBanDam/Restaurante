@@ -30,17 +30,17 @@ include '../../templates/header.php';
         <form action="" method="post">
             <div class="mb-3">
                 <label for="titulo" class="form-label">Título: </label>
-                <input type="text" class="form-control" name="titulo" id="titulo" aria-describedby="helpId" placeholder="Escriba el título del banner">
+                <input type="text" class="form-control" name="titulo" id="titulo" aria-describedby="helpId" placeholder="Escriba el título del banner" required>
             </div>
 
             <div class="mb-3">
                 <label for="descripcion" class="form-label">Descripción: </label>
-                <input type="text" class="form-control" name="descripcion" id="descripcion" aria-describedby="helpId" placeholder="Escribe la descripción del banner">
+                <input type="text" class="form-control" name="descripcion" id="descripcion" aria-describedby="helpId" placeholder="Escribe la descripción del banner" required>
             </div>
 
             <div class="mb-3">
                 <label for="link" class="form-label">Link</label>
-                <input type="text" class="form-control" name="link" id="link" aria-describedby="helpId" placeholder="Escriba el enlace" />
+                <input type="text" class="form-control" name="link" id="link" aria-describedby="helpId" placeholder="Escriba el enlace" required>
             </div>
 
             <button type="submit" class="btn btn-success">Crear Banner</button>
