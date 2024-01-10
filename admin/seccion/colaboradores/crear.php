@@ -1,9 +1,35 @@
-<?php include "../../templates/header.php"; 
+<?php 
+include "../../bd.php";
 
-	echo "<pre>";
+
+	if($_POST){
+		$titulo = (isset($_POST['titulo'])) ? $_POST['titulo']:"";
+		$descripcion = (isset($_POST['descripcion'])) ? $_POST['descripcion']:"";
+		$linkfb = (isset($_POST['linkfb'])) ? $_POST['linkfb']:"";
+		$linkig = (isset($_POST['linkig'])) ? $_POST['linkig']:"";
+		$linkedin = (isset($_POST['linkedin'])) ? $_POST['linkedin']:"";
+
+		$sentencia = $conexion->prepare("INSERT INTO `tbl_colaboradores` (`id`, `titulo`, `descripcion`, `linkfb`, `linkig`, `linkedin`, `foto`) 
+		VALUES (NULL, :titulo, :descripcion, :linkfb, :linkig, :linkedin, 'foto.jpg');");
+
+		$sentencia->bindParam(":titulo", $titulo);
+		$sentencia->bindParam(":descripcion", $descripcion);
+		$sentencia->bindParam(":linkfb", $linkfb);
+		$sentencia->bindParam(":linkig", $linkig);
+		$sentencia->bindParam(":linkedin", $linkedin);
+
+		$sentencia->execute();
+
+		header("Location: index.php");
+		
+		//$foto = (isset($_POST['foto'])) ? $_POST['foto']:"";
+	}
+
+	/* echo "<pre>";
 	var_dump($_POST);
-	echo "</pre>";
+	echo "</pre>"; */
 
+	include "../../templates/header.php"; 
 ?>
 
 <br>
