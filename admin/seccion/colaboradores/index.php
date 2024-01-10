@@ -1,5 +1,17 @@
 <?php
 include '../../bd.php';
+
+$sentencia = $conexion->prepare("SELECT * from `tbl_colaboradores`");
+$sentencia -> execute();
+$listaColaboradores = $sentencia -> fetchAll(PDO::FETCH_ASSOC);
+
+/* echo "<pre>";
+var_dump($listaColaboradores);
+echo "</pre>"; */
+
+/* INSERT INTO `restaurante`.`tbl_colaboradores` (`id`, `titulo`, `descripcion`, `linkfb`, `linkig`, `linkedin`, `foto`) VALUES ('2', 'Cosme Fulanito', 'Gastrónomo, experto en vinos y licores.', 'https://facebook.com/CosmeFulanito/', 'https://facebook.com/CosmeFulanito/', 'https://facebook.com/CosmeFulanito/', 'foto.jpg');
+ */
+
 include '../../templates/header.php';
 ?>
 
@@ -16,24 +28,32 @@ include '../../templates/header.php';
 				<thead>
 					<tr>
 						<th scope="col">ID</th>
-						<th scope="col">Título</th>
+						<th scope="col">Nombre del Chef</th>
 						<th scope="col">Foto</th>
 						<th scope="col">Descripción</th>
-						<th scope="col">linkfb</th>
-						<th scope="col">linkig</th>
-						<th scope="col">linkedin</th>
+						<th scope="col">Redes Sociales</th>
+						<th scope="col">Acciones</th>
 					</tr>
 				</thead>
 				<tbody>
-					<tr class="">
-						<td scope="row">R1C1</td>
-						<td>R1C2</td>
-						<td>R1C3</td>
-						<td>R1C3</td>
-						<td>R1C3</td>
-						<td>R1C3</td>
-						<td>R1C3</td>
-					</tr>
+					<?php foreach ($listaColaboradores as $key => $value) { ?>
+						<tr class="">
+							<td scope="row"><?php echo $value['id'];?></td>
+							<td><?php echo $value['titulo'];?></td>
+							<td><?php echo $value['foto'];?></td>
+							<td><?php echo $value['descripcion'];?></td>
+							<td>
+								<?php echo $value['linkfb'];?> <br>
+								<?php echo $value['linkig'];?> <br>
+								<?php echo $value['linkedin'];?> <br>
+							</td>
+							<td>
+                                    <a name="" id="" class="btn btn-info" href="editar.php?txtID=<?php echo $value['id'];?>" role="button">Editar</a>
+                                    <a name="" id="" class="btn btn-danger" href="index.php?txtID=<?php echo $value['id'];?>" role="button">Eliminar</a>
+                                </td>
+
+						</tr>
+					<?php } ?>
 				</tbody>
 			</table>
 		</div>
