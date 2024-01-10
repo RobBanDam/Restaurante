@@ -9,9 +9,20 @@ include "../../bd.php";
 		$linkig = (isset($_POST['linkig'])) ? $_POST['linkig']:"";
 		$linkedin = (isset($_POST['linkedin'])) ? $_POST['linkedin']:"";
 
-		$sentencia = $conexion->prepare("INSERT INTO `tbl_colaboradores` (`id`, `titulo`, `descripcion`, `linkfb`, `linkig`, `linkedin`, `foto`) 
-		VALUES (NULL, :titulo, :descripcion, :linkfb, :linkig, :linkedin, 'foto.jpg');");
+		$foto = (isset($_FILES['foto']["name"])) ? $_FILES['foto']["name"]:"";
+		$fechaFoto = new DateTime();
+		$nombreFoto = $fechaFoto->getTimestamp()."_".$foto;
 
+		$tmp_foto = $_FILES["foto"]["tmp_name"];
+
+		if($tmp_foto!=""){
+			move_uploaded_file($tmp_foto, $nombreFoto);
+		}
+
+		$sentencia = $conexion->prepare("INSERT INTO `tbl_colaboradores` (`id`, `titulo`, `descripcion`, `linkfb`, `linkig`, `linkedin`, `foto`) 
+		VALUES (NULL, :titulo, :descripcion, :linkfb, :linkig, :linkedin, :foto);");
+
+		$sentencia->bindParam(":foto", $nombreFoto);
 		$sentencia->bindParam(":titulo", $titulo);
 		$sentencia->bindParam(":descripcion", $descripcion);
 		$sentencia->bindParam(":linkfb", $linkfb);
@@ -21,8 +32,6 @@ include "../../bd.php";
 		$sentencia->execute();
 
 		header("Location: index.php");
-		
-		//$foto = (isset($_POST['foto'])) ? $_POST['foto']:"";
 	}
 
 	/* echo "<pre>";
