@@ -16,7 +16,7 @@ include "../../bd.php";
 		$tmp_foto = $_FILES["foto"]["tmp_name"];
 
 		if($tmp_foto!=""){
-			move_uploaded_file($tmp_foto, $nombreFoto);
+			move_uploaded_file($tmp_foto,"../../../images/colabs/" . $nombreFoto);
 		}
 
 		$sentencia = $conexion->prepare("INSERT INTO `tbl_colaboradores` (`id`, `titulo`, `descripcion`, `linkfb`, `linkig`, `linkedin`, `foto`) 

@@ -2,8 +2,8 @@
 include '../../bd.php';
 
 $sentencia = $conexion->prepare("SELECT * from `tbl_colaboradores`");
-$sentencia -> execute();
-$listaColaboradores = $sentencia -> fetchAll(PDO::FETCH_ASSOC);
+$sentencia->execute();
+$listaColaboradores = $sentencia->fetchAll(PDO::FETCH_ASSOC);
 
 /* echo "<pre>";
 var_dump($listaColaboradores);
@@ -38,19 +38,21 @@ include '../../templates/header.php';
 				<tbody>
 					<?php foreach ($listaColaboradores as $key => $value) { ?>
 						<tr class="">
-							<td scope="row"><?php echo $value['id'];?></td>
-							<td><?php echo $value['titulo'];?></td>
-							<td><?php echo $value['foto'];?></td>
-							<td><?php echo $value['descripcion'];?></td>
+							<td scope="row"><?php echo $value['id']; ?></td>
+							<td><?php echo $value['titulo']; ?></td>
 							<td>
-								<?php echo $value['linkfb'];?> <br>
-								<?php echo $value['linkig'];?> <br>
-								<?php echo $value['linkedin'];?> <br>
+								<img src="../../../images/colabs/<?php echo $value['foto']; ?>" width="50" class="img-fluid rounded-top" alt="imagen_Colaborador" />
+							</td>
+							<td><?php echo $value['descripcion']; ?></td>
+							<td>
+								<?php echo $value['linkfb']; ?> <br>
+								<?php echo $value['linkig']; ?> <br>
+								<?php echo $value['linkedin']; ?> <br>
 							</td>
 							<td>
-                                    <a name="" id="" class="btn btn-info" href="editar.php?txtID=<?php echo $value['id'];?>" role="button">Editar</a>
-                                    <a name="" id="" class="btn btn-danger" href="index.php?txtID=<?php echo $value['id'];?>" role="button">Eliminar</a>
-                                </td>
+								<a name="" id="" class="btn btn-info" href="editar.php?txtID=<?php echo $value['id']; ?>" role="button">Editar</a>
+								<a name="" id="" class="btn btn-danger" href="index.php?txtID=<?php echo $value['id']; ?>" role="button">Eliminar</a>
+							</td>
 
 						</tr>
 					<?php } ?>
