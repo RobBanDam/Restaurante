@@ -1,6 +1,30 @@
 <?php
 include '../../bd.php';
 
+if(isset($_GET['txtID'])){
+    $txtID = (isset($_GET["txtID"])) ? $_GET["txtID"]:"";
+	
+	//Borrado de img
+	$sentencia = $conexion->prepare("SELECT * from `tbl_colaboradores` WHERE id=:id");
+	$sentencia->bindParam(":id", $txtID);
+	$sentencia->execute();
+
+	$registroFoto = $sentencia->fetch(PDO::FETCH_LAZY);
+
+	if(isset($registroFoto['foto'])){
+		if(file_exists("../../../images/colabs/" . $registroFoto['foto'])){
+			unlink("../../../images/colabs/" . $registroFoto['foto']);
+		}
+	}
+
+	//Borrar registros en tbl_colaboradores
+    $sentencia = $conexion->prepare("DELETE FROM tbl_colaboradores WHERE id=:id");
+    $sentencia->bindParam(":id", $txtID);
+    $sentencia->execute();
+
+    header("Location: index.php");
+}
+
 $sentencia = $conexion->prepare("SELECT * from `tbl_colaboradores`");
 $sentencia->execute();
 $listaColaboradores = $sentencia->fetchAll(PDO::FETCH_ASSOC);
