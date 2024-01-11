@@ -53,8 +53,8 @@ include "../../bd.php";
 			</div>
 
 			<div class="mb-3">
-				<label for="titulo" class="form-label">Título: </label>
-				<input type="text" required class="form-control" name="titulo" id="titulo" aria-describedby="helpId" placeholder="Ingresa el Título">
+				<label for="titulo" class="form-label">Nombre: </label>
+				<input type="text" required class="form-control" name="titulo" id="titulo" aria-describedby="helpId" placeholder="Ingresa el nombre del cocinero">
 			</div>
 
 			<div class="mb-3">

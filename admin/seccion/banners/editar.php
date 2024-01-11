@@ -50,7 +50,7 @@ include '../../templates/header.php';
         <form action="" method="post">
             <div class="mb-3">
                 <label for="txtID" class="form-label">ID: </label>
-                <input type="text" value="<?php echo $txtID;?>" class="form-control" name="txtID" id="txtID" placeholder="Escriba el título del banner" readonly>
+                <input type="text" value="<?php echo $txtID;?>" class="form-control" name="txtID" id="txtID" readonly>
             </div>
 
             <div class="mb-3">
