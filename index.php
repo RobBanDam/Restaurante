@@ -5,9 +5,13 @@
 	$sentencia -> execute();
 	$listaBanners = $sentencia->fetchAll(PDO::FETCH_ASSOC);
 
-	/* echo "<pre>";
-	var_dump($listaBanners);
-	echo "</pre>"; */
+	$sentencia = $conexion->prepare("SELECT * FROM tbl_colaboradores order by id desc limit 3");
+	$sentencia -> execute();
+	$listaColabs = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+
+	echo "<pre>";
+	var_dump($listaColabs);
+	echo "</pre>";
 
 ?>
 
@@ -96,52 +100,22 @@
 	<section id="chefs" class="container mt-4 text-center">
 		<h2>Nuestros Expertos en la Cocina</h2>
 		<div class="row">
-
-			<div class="col-md-4">
-				<div class="card">
-					<img src="images/colabs/img1.jpg" alt="Imagen Chef" class="card-img-top">
-					<div class="card-body">
-						<h5 class="card-title">Juan Carlos "Tacos Locos" Torres</h5>
-						<p class="card-text">Creador de los Tacos Locos</p>
-						<div class="social-icons mt-3">
-							<a href="#" class="text-dark me-3"><i class="fab fa-facebook"></i></a>
-							<a href="#" class="text-dark me-3"><i class="fab fa-twitter"></i></a>
-							<a href="#" class="text-dark me-3"><i class="fab fa-instagram"></i></a>
+			<?php foreach($listaColabs as $colab) {?>
+				<div class="col-md-4">
+					<div class="card">
+						<img src="images/colabs/<?php echo $colab["foto"];?>" alt="Imagen Chef" class="card-img-top">
+						<div class="card-body">
+							<h5 class="card-title"><?php echo $colab['titulo'];?></h5>
+							<p class="card-text"><?php echo $colab['descripcion'];?></p>
+							<div class="social-icons mt-3">
+								<a href="<?php echo $colab['linkfb'];?>" class="text-dark me-3"><i class="fab fa-facebook"></i></a>
+								<a href="<?php echo $colab['linkedin'];?>" class="text-dark me-3"><i class="fab fa-linkedin"></i></a>
+								<a href="<?php echo $colab['linkig'];?>" class="text-dark me-3"><i class="fab fa-instagram"></i></a>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-
-			<div class="col-md-4">
-				<div class="card">
-					<img src="images/colabs/img2.jpg" alt="Imagen Chef" class="card-img-top">
-					<div class="card-body">
-						<h5 class="card-title">María del Carmen "La Maquillera" Pérez</h5>
-						<p class="card-text">Maquiragista y cocinera por vocación.</p>
-						<div class="social-icons mt-3">
-							<a href="#" class="text-dark me-3"><i class="fab fa-facebook"></i></a>
-							<a href="#" class="text-dark me-3"><i class="fab fa-twitter"></i></a>
-							<a href="#" class="text-dark me-3"><i class="fab fa-instagram"></i></a>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-md-4">
-				<div class="card">
-					<img src="images/colabs/img3.jpg" alt="Imagen Chef" class="card-img-top">
-					<div class="card-body">
-						<h5 class="card-title">Carlos "El Gourmet" Sánchez</h5>
-						<p class="card-text">Gastrónomo, experto en vinos y licores.</p>
-						<div class="social-icons mt-3">
-							<a href="#" class="text-dark me-3"><i class="fab fa-facebook"></i></a>
-							<a href="#" class="text-dark me-3"><i class="fab fa-twitter"></i></a>
-							<a href="#" class="text-dark me-3"><i class="fab fa-instagram"></i></a>
-						</div>
-					</div>
-				</div>
-			</div>
-
+			<?php } ?>
 		</div>
 	</section>
 
