@@ -9,10 +9,6 @@
 	$sentencia -> execute();
 	$listaColabs = $sentencia->fetchAll(PDO::FETCH_ASSOC);
 
-	echo "<pre>";
-	var_dump($listaColabs);
-	echo "</pre>";
-
 ?>
 
 
