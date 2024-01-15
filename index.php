@@ -9,6 +9,9 @@
 	$sentencia -> execute();
 	$listaColabs = $sentencia->fetchAll(PDO::FETCH_ASSOC);
 
+	$sentencia = $conexion->prepare("SELECT * FROM tbl_testimonios order by id desc limit 3");
+	$sentencia -> execute();
+	$listaTestimonio = $sentencia->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 
@@ -120,27 +123,16 @@
 		<div class="container">
 			<h2 class="mb-4 text-center">Testimonios</h2>
 			<div class="row">
-				<div class="col-md-6 d-flex">
-					<div class="card md-4 w-100">
-						<div class="card-body">
-							<p class="card-text">Muy buena Comida</p>
-						</div>
-						<div class="card-footer text-muted">
-							Juan Carlos
-						</div>
-					</div>
-				</div>
-
-				<div class="col-md-6 d-flex">
-					<div class="card md-4 w-100">
-						<div class="card-body">
-							<p class="card-text">Muy buena Comida</p>
-						</div>
-						<div class="card-footer text-muted">
-							Juan Carlos
+				<?php foreach($listaTestimonio as $testimonio) {?>
+					<div class="col-md-6 d-flex">
+						<div class="card md-4 w-100">
+							<div class="card-body">
+								<p class="card-text"><?php echo $testimonio['opinion']; ?></p>
+							</div>
+							<div class="card-footer text-muted"><?php echo $testimonio['nombre']; ?></div>
 						</div>
 					</div>
-				</div>
+				<?php } ?>
 			</div>
 		</div>
 	</section>
