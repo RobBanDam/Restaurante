@@ -16,6 +16,26 @@
 	$sentencia = $conexion->prepare("SELECT * FROM tbl_menu order by id desc limit 4");
 	$sentencia -> execute();
 	$listaMenu = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+
+	if($_POST){
+		//echo "<pre>"; var_dump($_POST); echo "</pre>";
+		$nombre = filter_var($_POST["nombre"], FILTER_SANITIZE_STRING);
+		$correo = filter_var($_POST["correo"], FILTER_SANITIZE_EMAIL);
+		$mensaje = filter_var($_POST["mensaje"], FILTER_SANITIZE_STRING);
+
+		if($nombre && $correo && $mensaje){
+			$sql = "INSERT INTO `tbl_comentarios` (`id`, `nombre`, `correo`, `mensaje`) 
+					VALUES 
+						(NULL, :nombre, :correo, :mensaje);";
+			
+			$resultado = $conexion->prepare($sql);
+			$resultado -> bindParam(':nombre', $nombre, PDO::PARAM_STR);
+			$resultado -> bindParam(':correo', $correo, PDO::PARAM_STR);
+			$resultado -> bindParam(':mensaje', $mensaje, PDO::PARAM_STR);
+			$resultado->execute();
+		}
+		header("Location: index.php");
+	}
 ?>
 
 
@@ -106,7 +126,7 @@
 			<?php foreach($listaColabs as $colab) {?>
 				<div class="col-md-4">
 					<div class="card">
-						<img src="images/colabs/<?php echo $colab["foto"];?>" alt="Imagen Chef" class="card-img-top">
+						<img src="images/colabs/<?php echo $colab["foto"];?>" alt="Imagen Chef" class="card-img-top" style="object-fit: cover;">
 						<div class="card-body">
 							<h5 class="card-title"><?php echo $colab['titulo'];?></h5>
 							<p class="card-text"><?php echo $colab['descripcion'];?></p>
@@ -149,8 +169,8 @@
 			<?php foreach($listaMenu as $menu) { ?>
 				<div class="col d-flex">
 					<div class="card bg-transparent border-success h-100">
-						<img src="images/menu/<?php echo $menu['foto'];?>" alt="imagen de comida" class="card-img-top">
-						<div class="card-body">
+						<img src="images/menu/<?php echo $menu['foto'];?>" alt="imagen de comida" class="card-img-top" style="height: 15rem; object-fit: cover;">
+						<div class="card-body" style="width: 80rem;">
 							<h5 class="card-title"><?php echo $menu['nombre'];?></h5>
 							<p class="card-text"><?php echo $menu['ingredientes'];?></p>
 							<p class="card-text">$<?php echo $menu['precio'];?></p>
@@ -171,8 +191,8 @@
 			<div class="mb-3">
 				<label for="nombre">Nombre: </label><br>
 				<input type="text" class="form-control" id="nombre" name="nombre" placeholder="Escribe aquí tu Nombre" required><br>
-				<label for="email">Correo Electrónico: </label><br>
-				<input type="email" class="form-control" id="email" name="email" placeholder="Ejemplo@ejemplo.com" required><br>
+				<label for="correo">Correo Electrónico: </label><br>
+				<input type="email" class="form-control" id="correo" name="correo" placeholder="Ejemplo@ejemplo.com" required><br>
 				<label for="mensaje">Mensaje: </label><br>
 				<textarea id="mensaje" class="form-control" name="mensaje" rows="6" cols="50"></textarea><br>
 			</div>
