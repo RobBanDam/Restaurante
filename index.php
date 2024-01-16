@@ -12,6 +12,10 @@
 	$sentencia = $conexion->prepare("SELECT * FROM tbl_testimonios order by id desc limit 3");
 	$sentencia -> execute();
 	$listaTestimonio = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+
+	$sentencia = $conexion->prepare("SELECT * FROM tbl_menu order by id desc limit 4");
+	$sentencia -> execute();
+	$listaMenu = $sentencia->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 
@@ -142,45 +146,19 @@
 		<h2 class="text-center">Menú (Nuestras Recomendaciones)</h2>
 		<br>
 		<div class="row row-cols-1 row-cols-md-4 g-4">
-			<div class="col d-flex">
-				<div class="card bg-transparent border-success h-100">
-					<img src="images/menu/img1.jpg" alt="imagen de comida" class="card-img-top">
-					<div class="card-body">
-						<h5 class="card-title">Titulo de la receta</h5>
-						<p class="card-text">Descripción breve de la receta.</p>
+			<?php foreach($listaMenu as $menu) { ?>
+				<div class="col d-flex">
+					<div class="card bg-transparent border-success h-100">
+						<img src="images/menu/<?php echo $menu['foto'];?>" alt="imagen de comida" class="card-img-top">
+						<div class="card-body">
+							<h5 class="card-title"><?php echo $menu['nombre'];?></h5>
+							<p class="card-text"><?php echo $menu['ingredientes'];?></p>
+							<p class="card-text">$<?php echo $menu['precio'];?></p>
+						</div>
 					</div>
 				</div>
-			</div>
-
-			<div class="col d-flex">
-				<div class="card bg-transparent border-success h-100">
-					<img src="images/menu/img2.jpg" alt="imagen de comida" class="card-img-top">
-					<div class="card-body">
-						<h5 class="card-title">Titulo de la receta</h5>
-						<p class="card-text">Descripción breve de la receta.</p>
-					</div>
-				</div>
-			</div>
-
-			<div class="col d-flex">
-				<div class="card bg-transparent border-success h-100">
-					<img src="images/menu/img3.jpg" alt="imagen de comida" class="card-img-top">
-					<div class="card-body">
-						<h5 class="card-title">Titulo de la receta</h5>
-						<p class="card-text">Descripción breve de la receta.</p>
-					</div>
-				</div>
-			</div>
-
-			<div class="col d-flex">
-				<div class="card bg-transparent border-success h-100">
-					<img src="images/menu/img4.jpg" alt="imagen de comida" class="card-img-top">
-					<div class="card-body">
-						<h5 class="card-title">Titulo de la receta</h5>
-						<p class="card-text">Descripción breve de la receta.</p>
-					</div>
-				</div>
-			</div>
+			<?php } ?>
+			
 		</div>
 	</main>
 
