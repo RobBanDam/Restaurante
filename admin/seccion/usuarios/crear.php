@@ -19,9 +19,9 @@ if($_POST){
     header("Location: index.php");
 }
 
-echo "<pre>";
+/* echo "<pre>";
 var_dump($_POST);
-echo "</pre>";
+echo "</pre>"; */
 
 include '../../templates/header.php';
 ?>
